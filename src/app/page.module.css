@@ -1,0 +1,13 @@
+.container {
+    background-image: url('fondo-azul.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Hace que el contenedor cubra toda la pantalla verticalmente */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+  .content {
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
