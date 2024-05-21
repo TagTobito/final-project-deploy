@@ -1,6 +1,16 @@
 import Image from "next/image";
+import Parcela from "../components/parcela";
+import CantidadRecursos from "../components/cantidad-recursos";
 
-export default function Home() {
+function HomePage() {
+  const estadosParcelas = [
+    "Granja", "Vacio", "Vacio", 
+    "Vacio", "Vacio", "Vacio", "Vacio",
+    "Vacio", "Vacio", "Urbano", "Vacio",
+    "Vacio", "Vacio", "Granja", "Vacio",
+    "Vacio", "Vacio", "Vacio", "Vacio"
+  ];
+  
   return (
     <div className="relative h-screen">
       <Image
@@ -11,171 +21,40 @@ export default function Home() {
         quality={100}
       />
       <div className="absolute inset-0 flex items-center justify-center bg-transparent">
-        <div className="flex items-center flex-col ">
-          <div className="flex">
-            <div className="-my-7">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="-mx-1 -my-7">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="-my-7">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
+        <div className="flex items-center flex-col gap-y-1">
+          {/* Asignar cada elemento de la lista a las parcelas */}
+          <div className="flex -mb-8">
+            {estadosParcelas.slice(0, 3).map((estado, index) => (
+              <Parcela key={index} estado={estado} pos={index} />
+            ))}
           </div>
           <div className="flex">
-            <div>
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="-mx-1">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div>
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="-mx-1">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
+            {estadosParcelas.slice(3, 7).map((estado, index) => (
+              <Parcela key={index} estado={estado} pos={index} />
+            ))}
+          </div>
+          <div className="flex -my-8">
+            {estadosParcelas.slice(7, 12).map((estado, index) => (
+              <Parcela key={index} estado={estado} pos={index} />
+            ))}
           </div>
           <div className="flex">
-            <div className="-my-7">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="-mx-1 -my-7">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="-my-7">
-              <Image
-                src="/centro-urbano.png"
-                alt="Botón Centro Urbano"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div  className="-mx-1 -my-7">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="-my-7">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
+            {estadosParcelas.slice(12, 16).map((estado, index) => (
+              <Parcela key={index} estado={estado} pos={index} />
+            ))}
           </div>
-          <div className="flex">
-            <div className="-mx-1">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div  className="-mx-1 ">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-            <div className="">
-              <Image
-                src="/parcela-vacia.png"
-                alt="Botón Parcela Vacía"
-                width={100}
-                height={100}
-              />
-            </div>
-          </div>
-          <div className="flex">
-              <div className="-mx-1 -mt-7">
-                <Image
-                  src="/parcela-vacia.png"
-                  alt="Botón Parcela Vacía"
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div className="-mt-7">
-                <Image
-                  src="/parcela-vacia.png"
-                  alt="Botón Parcela Vacía"
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div className="-mx-1 -mt-7">
-                <Image
-                  src="/parcela-vacia.png"
-                  alt="Botón Parcela Vacía"
-                  width={100}
-                  height={100}
-                />
-              </div>
+          <div className="flex -mt-8">
+            {estadosParcelas.slice(16, 19).map((estado, index) => (
+              <Parcela key={index} estado={estado} pos={index} />
+            ))}
           </div>
         </div>
+      </div>
+      <div>
+        <CantidadRecursos />
       </div>
     </div>
   );
 }
+
+export default HomePage;

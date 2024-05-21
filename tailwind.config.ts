@@ -13,6 +13,16 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        // Agrega tus colores personalizados aquí
+        customYellow: "#DEA875",
+        customDarkGray: "#131313",
+        customFarmColor: "#F4EB9E",
+        customQuarryColor: "#B998B3",
+        customSawmillColor: "#529A47",
+        customBarracksColor: "#087EFF",
+        customMineColor: "#DA901C",
+      },
     },
   },
   plugins: [],
