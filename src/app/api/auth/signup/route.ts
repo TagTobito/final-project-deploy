@@ -1,3 +1,4 @@
+// app/api/auth/signup/route.ts
 import { connectDB } from "@/libs/mongodb";
 import User from "@/models/user";
 import { NextResponse } from "next/server";
